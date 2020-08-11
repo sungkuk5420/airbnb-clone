@@ -49,3 +49,13 @@ python manage.py createsuperuser
 python manage.py makemigrations
 python manage.py migrate
 ```
+
+## 어플리케이션 생성
+```
+django-admin startapp <application name>
+```
+
+## 파일 설명
+```
+urls.py 에서 접근 url을 관리한다.
+```
