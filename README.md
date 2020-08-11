@@ -35,3 +35,17 @@ pipenv shell
 python manage.py runserver
 python manage.py migrate
 ```
+
+## 어드민페이지 진입
+```
+유저생성
+python manage.py createsuperuser
+
+링크뒤에 /admin붙이면 어드민페이지
+```
+
+## 데이터 마이그레이션
+```
+python manage.py makemigrations
+python manage.py migrate
+```
