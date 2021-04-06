@@ -130,3 +130,18 @@ python manage.py migrate
 
 9. Done!
  ```
+
+## TimeStampedModel(core) 모델의 활용
+```
+공통으로 사용되는 필드를 자꾸 생성할 필요가 없다.
+예를들면 
+created = models.DateTimeField()
+updated = models.DateTimeField()
+
+이런것들은 클래스로 정의하여 재사용하는데 이때 사용하는것이 추상 모델이다
+
+이것은 데이터베이스에 추가되지않고 소스내에서만 사용된다는것인데.
+
+abstract = True
+로 설정할 수 있다.
+```
