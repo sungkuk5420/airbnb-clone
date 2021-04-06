@@ -156,3 +156,11 @@ pipenv install django-countries
 ```
 모델과 모델을 연결하기도함 host에 유저 모델을 연동 models.models.ForeignKey(user_models.User, on_delete=models.CASCADE)
 ```
+
+## 관계 모델의 on_delete 이벤트 (오직 ForeignKey에만 사용가능.)
+```
+삭제될때의 관계모델의 행동을 정의할 수 있다.
+CASCADE : 폭포수효과 위에서부터 순차적으로 삭제됌.
+PROTECT : 연결된 관계형태가 있으면 삭제를 못하게 막음.
+SET_NULL : 연결된 관계형태가 삭제되면 연결값이 없는 NULL로 설정함.
+```
