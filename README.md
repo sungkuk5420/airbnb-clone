@@ -145,3 +145,14 @@ updated = models.DateTimeField()
 abstract = True
 로 설정할 수 있다.
 ```
+
+## 서드 파트 앱 추가
+
+```
+pipenv install django-countries
+```
+
+## Rooms 어플리케이션에서 중요한것
+```
+모델과 모델을 연결하기도함 host에 유저 모델을 연동 models.models.ForeignKey(user_models.User, on_delete=models.CASCADE)
+```
