@@ -50,6 +50,10 @@ django-admin startproject config
 ```
 
 ## 확장프로그램에서 python 설치하기.
+## Djaneiro
+## code spell checker
+
+## pip install pep8 pylint pylint_django
 
 ## 이후 린트, 포멧터등 환경설정 이어감.
 
@@ -99,3 +103,30 @@ urls.py 에서 접근 url을 관리한다.
 
 ## 모든 생성된 파일에 대해서는 변경,삭제를 추천하지않지만 추가는 가능하다.
  ex) users 어플리케이션 내에 urls.py를 만들어서 users상세 url을 만드는것이 가능하다. users/edit users/delete 등등
+
+ ## user 테이블의 확장
+ ```
+ 어드민에서 사용되는 user 테이블 이외의 필드가 필요한 어플리케이션이 많으므로 확장이 필요하다.
+
+https://docs.djangoproject.com/en/2.2/topics/auth/customizing/
+
+1.users에서 models.py 파일에서 유저에 AbstractUser 모델을 상속하도록 지정한다.
+class User(AbstractUser):
+
+ 2.config에 가서 settings파일을 연다
+
+3.DJANGO_APPS에 INSTALLED_APPS앱을 넣는다.
+4.PROJECT_APPS에 새로 추가한 앱을 넣는다. ["users.apps.UsersConfig"]
+
+5.INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS 인스톨앱에 병합
+6.추가한 유저 모델을 맨밑에 적어준다.
+
+AUTH_USER_MODEL = "users.User"
+
+7.데이터파일 db.sqlite3을 지운다.
+8.데이터 마이그레이션 한다.
+python manage.py makemigrations
+python manage.py migrate
+
+9. Done!
+ ```
