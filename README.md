@@ -1,11 +1,39 @@
 # airbnb clone
 
-## package.json같은역할
+
+## pip 설치
+```
+pip install --user pipenv
+```
+
+### pip error cmd를 절대로 관리자모드로 실행할것
+```
+pip install --user pipenv
+설치가 끝난후에 제대로 설치가 되어있는지 확인을 하려면
+
+pipenv
+라고 치시면되는데 만약에라도 pipenv 가 인식이 안되시는분이 계신다면
+
+기존에 virtualenv 를 삭제를 해줘야됩니다.
+
+기존 virtualenv 를 삭제
+
+pip uninstall virtualenv
+방금 설치했던 pipenv 도 삭제
+
+pip uninstall pipenv
+다시 설치 !
+
+pip install pipenv
+```
+
+## package.json같은역할 버블을 만듬!!
+파이썬 기반 버전3 가상환경을 구축해야함.
 ```
 pipenv --three
 ```
 
-## 가상환경구축
+## 가상환경구축후 가상환경 안으로 들어가기
 ```
 pipenv shell
 ```
@@ -20,6 +48,10 @@ pipenv install Django==2.2.5
 django-admin startproject config
 이후 config 파일을 루트로 빼고 폴더 제거
 ```
+
+## 확장프로그램에서 python 설치하기.
+
+## 이후 린트, 포멧터등 환경설정 이어감.
 
 ## linter
 ```
@@ -36,6 +68,11 @@ python manage.py runserver
 python manage.py migrate
 ```
 
+## 장고 도큐멘트
+```
+https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
+```
+
 ## 어드민페이지 진입
 ```
 유저생성
@@ -50,7 +87,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-## 어플리케이션 생성
+## 어플리케이션 생성 (반드시 복수형으로 만들것)
 ```
 django-admin startapp <application name>
 ```
@@ -59,3 +96,6 @@ django-admin startapp <application name>
 ```
 urls.py 에서 접근 url을 관리한다.
 ```
+
+## 모든 생성된 파일에 대해서는 변경,삭제를 추천하지않지만 추가는 가능하다.
+ ex) users 어플리케이션 내에 urls.py를 만들어서 users상세 url을 만드는것이 가능하다. users/edit users/delete 등등
