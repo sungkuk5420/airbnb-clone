@@ -197,3 +197,15 @@ filter_horizontal = ("amenities", "facilities", "house_rules")
 상세화면에서 접을 수 있는 섹션 생성.
 아코디언처럼 접기, 펴기
 ```
+
+## custom admin functions
+
+```
+리스트에 실제로 모델에 있는 필드가 아니라 커스텀 필드를 출력하고 싶을때 사용한다.
+
+ex) count_amenities
+
+
+def count_amenities(self, obj):
+        return obj.amenities.count()
+```
