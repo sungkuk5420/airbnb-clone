@@ -169,3 +169,16 @@ CASCADE : 폭포수효과 위에서부터 순차적으로 삭제됌.
 PROTECT : 연결된 관계형태가 있으면 삭제를 못하게 막음.
 SET_NULL : 연결된 관계형태가 삭제되면 연결값이 없는 NULL로 설정함.
 ```
+
+## 6강 Room Admin 부터는 어드민 패널의 화면 커스텀
+
+## search_fields
+```
+객체 내부검색을 위해선 객체명__객체필드명으로 검색한다
+ex) host__username
+
+=city 일치하는단어 대소문자 구분없이
+@search
+None icontains =>~에 포함되다 대소문자 구분없이
+^  startwith 로 시작하다.
+```
