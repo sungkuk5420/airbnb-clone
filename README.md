@@ -181,4 +181,19 @@ ex) host__username
 @search
 None icontains =>~에 포함되다 대소문자 구분없이
 ^  startwith 로 시작하다.
+
+필터에는 관계모델의 필드로도 가능하다.
+호스트의 슈퍼호스트인가를 보기위해서는 "host__superhost"
+```
+
+## filter_horizontal
+```
+여러개의 복수 릴레이션에 관해 검색기능을 달수 있다.
+filter_horizontal = ("amenities", "facilities", "house_rules")
+```
+
+## "classes": ("collapse",),
+```
+상세화면에서 접을 수 있는 섹션 생성.
+아코디언처럼 접기, 펴기
 ```
