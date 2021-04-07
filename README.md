@@ -1,6 +1,11 @@
 # airbnb clone
 
 
+## 다시들어야할것같은강의
+```
+#4.5 Meta Class and Photos Model (09:43)
+```
+
 ## pip 설치
 ```
 pip install --user pipenv
