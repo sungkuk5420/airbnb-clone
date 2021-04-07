@@ -4,6 +4,7 @@
 ## 다시들어야할것같은강의
 ```
 #4.5 Meta Class and Photos Model (09:43)
+#7.2 Many to Many _sets (02:50)
 ```
 
 ## pip 설치
@@ -208,4 +209,42 @@ ex) count_amenities
 
 def count_amenities(self, obj):
         return obj.amenities.count()
+
+표시되는 컬럼명을 바꾸고 싶을때엔
+count_amenities.short_description = "Hello sexy!"
+```
+
+## 커멘드창에서 장고 직접 통신하여 데이터 확인하는법
+
+```
+일단 장고 커멘드 셀에 진입
+python manage.py shell
+
+유저 모델에 진입
+from users.models import User
+
+이후
+User 등으로 모델명 검색하면 클래스명 확인가능.
+<class 'users.models.User'>
+
+dir(User) 
+이렇게 입력하면 유저의 필드names가 나온다.
+
+vars(User)
+이렇게 입력하면 유저의 구조 딕셔너리가 나온다.
+
+User.objects 
+-> user manager 는 파이썬을 이용해서 sql을 쓰지않고 데이터를 가져올 수 있다.
+
+User.objects.all() 
+유저의 모든 목록을 취득함
+
+all_user = User.objects.all()
+all_user.filter(superhost=True)
+등등가능
+
+
+itnico = User.objects.get(username="itnico.las.me")
+print(itnico)
+
 ```
