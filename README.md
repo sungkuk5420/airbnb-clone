@@ -250,3 +250,22 @@ print(itnico)
 ```
 
 ## 사이트와 어드민 패널 양쪽에서 사용되는 함수는 models.py에 정의한다
+
+```
+```
+
+## 파일 업로드할때마다 프로젝트 루트에 저장이 됌. 저장루트를 변경하려면
+```
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+라고 config/settings.py에 추가한다.
+
+이후 파일이 저장되는 모델에서 imageField 값을 변경해준다
+avatar = models.ImageField(upload_to="avatars", blank=True)
+file = models.ImageField(upload_to="room_photos")
+
+파일접근권한추가
+
+settings에 
+
+MEDIA_URL = "/media/"
+```
