@@ -5,6 +5,7 @@
 ```
 #4.5 Meta Class and Photos Model (09:43)
 #7.2 Many to Many _sets (02:50)
+#8.5 Photo Admin (09:07)
 ```
 
 ## pip 설치
@@ -268,4 +269,66 @@ file = models.ImageField(upload_to="room_photos")
 settings에 
 
 MEDIA_URL = "/media/"
+```
+
+## 장고 어드민 내부에서 다른 어드민 접근 쉽게 하기.
+```
+#8.6 raw_ids and Inline Admin (07:59)
+
+
+raw_id_fields를 추가하면 호스트 등 관계형 모델을 연결할때 작은 팝업으로 검색할 수 있게 해준다.
+
+인라인 모델 어드민은.
+어드민 안에 또 다른 어드민을 넣는것이다.
+룸안에서 다시 포토화면으로 이동해서 포토를 추가하긴 너무 번거롭기때문에.
+
+PhotoInline을 만들고 이것을 룸 어드민에 추가해준다.
+
+class PhotoInline(admin.TabularInline):
+
+    model = models.Photo
+
+class RoomAdmin(admin.ModelAdmin):
+
+    """ Room Admin Definition """
+
+    inlines = (PhotoInline,)
+
+
+admin.TabularInline
+admin.StackedInline
+
+이 두개의 옵션 변경으로 인라인 모델의 보여주는 형태를 변경할 수 있다.
+```
+
+## 장고 내부이벤트를 캐치하여 커스텀하기
+
+```
+여기서 오브젝트형 프로그래밍에선 슈퍼형식으로 상속한다.
+
+class Dog:
+    def __init__(self):
+        print("woof woof")
+    def pee(self):
+        print("I will pee")
+
+class Puppy(Dog):
+    def pee(self):
+        print("go to the park")
+        super().pee()
+
+p = Puppy()
+
+p.pee()
+
+->>
+"woof woof"
+"I will pee"
+
+슈퍼까지 실행하면
+
+->>
+"woof woof"
+"go to the park"
+"I will pee"
 ```
