@@ -332,3 +332,12 @@ p.pee()
 "go to the park"
 "I will pee"
 ```
+
+## 위의 커스텀은 모든 모델 변경에 대해 일어나는 이벤트인데 반대로 어드민패널에서의 변경사항에 대해서만 수정할때에는
+```
+def save_model(self, request, obj, form, change):
+    obj.user = request.user
+    super().save_model(request, obj, form, change)
+
+로 정의해줘야한다.
+```
