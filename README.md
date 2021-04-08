@@ -248,3 +248,5 @@ itnico = User.objects.get(username="itnico.las.me")
 print(itnico)
 
 ```
+
+## 사이트와 어드민 패널 양쪽에서 사용되는 함수는 models.py에 정의한다
