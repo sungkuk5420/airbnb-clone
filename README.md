@@ -343,3 +343,19 @@ def save_model(self, request, obj, form, change):
 ```
 
 ## 테스트용 데이터, 더미데이터 만들기. custom manage py commands django-seed
+```
+
+장고 시드는 가짜데이터를 위한것. faker를 사용하는데 이것이 하는 역할은
+장ㅈ고내의 모델들을 보고 각 데이터 타입별로 데이터를 넣어준다.
+
+장고 시드 설치.
+pipenv install django-seed
+```
+
+## 시드 실행명령어 순서
+```
+
+python manage.py seed_amenities
+python manage.py seed_users --number 50
+python manage.py seed_rooms --number 100
+```
