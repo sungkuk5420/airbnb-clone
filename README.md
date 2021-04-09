@@ -341,3 +341,5 @@ def save_model(self, request, obj, form, change):
 
 로 정의해줘야한다.
 ```
+
+## 테스트용 데이터, 더미데이터 만들기. custom manage py commands django-seed
