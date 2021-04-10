@@ -390,10 +390,46 @@ ex)<a href="?page={{page|add:1}}">Next</a>
 ```
 위의 직접구현방법을 참고하여 새로운 페이지네이션의동작방식을 이해하였다.
 
-Paginator
-를 사용하여 좀더쉽게 구현이가능한것을 확인.
+orphans 속성을 사용하여 나머지페이지에 한두개만 남는것을 방지함.
+
+Paginator를 사용하여 좀더쉽게 구현이가능한것을 확인.
 from django.core.paginator import Paginator
 
 #11.5 get_page vs page (09:58)
 차이점 이해 못했음 담에 다시 들어보기.
+
+-> 이후 클래스 기반으로 다시 한번 더 모듈화함.
+
+```
+
+## class based views
+```
+
+class view에서는 as_view()함수를 통해 클래스를 url로 바꿔줌.
+
+ccbv.co.uk
+-> Classy Class-Based Views
+대부분의 클래스베이스뷰를 보여준다.
+속성과 메소드를 보여준다.
+
+
+클래스 베이스 뷰는 너무 마법과 같은 단축을 보여주기때문에 명시적이지 않고. 이게 안좋다 좋다보다는 함수베이스, 클래스 베이스 뷰가 많이 있다. 나는 지금까지 함수 베이스 뷰를 사용해왔는데 당황스럽다.ㅠㅠ 잘 배울 수 있을까.. 장고엔 두가지 방식이 있고 검색해보면 이에 대한 토론이 많이 있다.
+
+모든 데이터는 context에 포함되어있고 이것을 비우면 아무것도 안나온다.
+
+    def get_context_data(self, **kwargs):
+        context = {}
+        return context
+
+클래스 베이스 뷰에서 좀 더 깊은 커스텀을 하고 싶을때에는 이 컨텍스트를 커스터 마이징하면 되는데 이경우에는
+
+
+        def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        now = timezone.now()
+        context["now"] = now
+        return context
+
+ 와 같이  쓴다.
+
 ```
