@@ -393,4 +393,7 @@ ex)<a href="?page={{page|add:1}}">Next</a>
 Paginator
 를 사용하여 좀더쉽게 구현이가능한것을 확인.
 from django.core.paginator import Paginator
+
+#11.5 get_page vs page (09:58)
+차이점 이해 못했음 담에 다시 들어보기.
 ```
