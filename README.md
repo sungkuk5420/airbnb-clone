@@ -369,3 +369,16 @@ python manage.py seed_reviews --number 200
 python manage.py seed_list --number 50
 python manage.py seed_reservations --number 40
 ```
+
+## 뷰 파일 만들기시작!
+```
+모든 컨텐츠는 블럭이 있고 , 익스텐드와 인클라우드로 파일을 분할하여 관리할 수 있다.
+
+all_rooms = models.Room.objects.all()[offset:limit] 
+여기서 두번째인자는 제한수, 첫번재 인자는 오프셋, 건너뛰는 숫자이다.
+
+예를들면 10부터 시작해서 다음 10개를 보여주고 싶으면 [10:20]
+
+페이지에 대한 컨벤션중 가장 일반적인건 url뒤에 붙이는것 page=1,page=2
+이것에 대한 정보는 request.GET.get("page",1)이런식으로 가져온다.
+```
