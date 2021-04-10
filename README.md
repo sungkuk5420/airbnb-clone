@@ -381,4 +381,16 @@ all_rooms = models.Room.objects.all()[offset:limit]
 
 페이지에 대한 컨벤션중 가장 일반적인건 url뒤에 붙이는것 page=1,page=2
 이것에 대한 정보는 request.GET.get("page",1)이런식으로 가져온다.
+
+뷰 템플릿에서 {{}}내의 문자열은 여러가지 재가공을 거칠수 있다.
+ex)<a href="?page={{page|add:1}}">Next</a>
+```
+
+## 장고 페이지네이션 모듈 사용하기
+```
+위의 직접구현방법을 참고하여 새로운 페이지네이션의동작방식을 이해하였다.
+
+Paginator
+를 사용하여 좀더쉽게 구현이가능한것을 확인.
+from django.core.paginator import Paginator
 ```
