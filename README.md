@@ -433,3 +433,12 @@ ccbv.co.uk
  와 같이  쓴다.
 
 ```
+
+## url tag 를사용하여 url 기억안해도되도록하기
+```
+<a href="/rooms/{{room.pf}}">
+를
+<a href="{% url 'rooms:detail' room.pk %}">
+
+이렇게 쓸수 있다.
+```
