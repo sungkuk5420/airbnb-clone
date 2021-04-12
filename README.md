@@ -13,7 +13,7 @@
 #13.7 Introduction to Django Forms (05:25)
 #13.8 I love Django Forms For Ever (08:15)
 #13.9 Forms are Awesome! (15:15)
-#13.10 Finishing Up! (05:39)
+
 ```
 
 ## pip 설치
@@ -493,4 +493,34 @@ form = {
     }
 
     return render(request, "rooms/search.html", {**form, **choices})
+```
+
+### 로그인 회원가입 만들기
+```
+users 어플리케이션 안에 forms.py를 추가한다.
+CSRF Cross Site Request Forgery
+사이트 간 요청 위조
+이걸 해결하기위해 폼 태그안에
+
+{% csrf_token %}
+라고 넣으면 된다.
+
+장고에서의 로그인폼 데이터 에러체크, 정리는
+clean_{필드명}
+으로 디파인 해줘야한다.
+이것에 대해 데이터 확인을 하고 싶으면
+if form.is_valid():
+    print(form.cleaned_data)로 볼 수 있다.
+
+
+폼안에 에러메세지 만들기.
+forms.ValidationError("User does not exist")
+
+check_password를 사용하려면 user에 붙여서 사용해야함.
+
+clean_를 쓰지않고 바로 clean을 써서 연관필드끼리 묶어서 표현가능하고
+이때 에러메세지를 해당 필드에 표시하고 싶을때에는
+self.add_error("email", forms.ValidationError("User does not exist"))
+와같이 쓴다.
+
 ```
