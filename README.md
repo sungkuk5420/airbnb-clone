@@ -523,4 +523,9 @@ clean_를 쓰지않고 바로 clean을 써서 연관필드끼리 묶어서 표�
 self.add_error("email", forms.ValidationError("User does not exist"))
 와같이 쓴다.
 
+ModelForm을 사용할때엔 유니크 값의 필드를 
+fields = ("first_name", "last_name", "email")와 같이 쓴다.
+
+save메소드에서 password를 오버라이딩 함. set_password
+commit=False의 의미는 오브젝트는 만들지만 아직 데이터베이스에 올리지 말라는뜻.
 ```
