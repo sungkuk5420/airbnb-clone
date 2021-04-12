@@ -6,6 +6,14 @@
 #4.5 Meta Class and Photos Model (09:43)
 #7.2 Many to Many _sets (02:50)
 #8.5 Photo Admin (09:07)
+#13.3 Amenities and Facilities Form (10:26)
+#13.4 Finishing the Form (08:04)
+#13.5 Filtering Like a Boss part One (10:10)
+#13.6 Filtering Like a Boss part Two (12:09)
+#13.7 Introduction to Django Forms (05:25)
+#13.8 I love Django Forms For Ever (08:15)
+#13.9 Forms are Awesome! (15:15)
+#13.10 Finishing Up! (05:39)
 ```
 
 ## pip 설치
@@ -456,4 +464,33 @@ from django.urls import reverse
 template/404.html 를 자동으로 매핑한다.
 셋팅에서 디버깅을 끄고 허용 호스트를 전부로 변경해야한다.
 
+```
+
+### Form 처리
+```
+form에서 사용하는 값과, 데이터베이스에서 받은 값을 따로 나눈다.
+
+form = {
+        "city": city,
+        "s_room_type": room_type,
+        "s_country": country,
+        "price": price,
+        "guests": guests,
+        "bedrooms": bedrooms,
+        "beds": beds,
+        "baths": baths,
+    }
+
+    room_types = models.RoomType.objects.all()
+    amenities = models.Amenity.objects.all()
+    facilities = models.Facility.objects.all()
+
+    choices = {
+        "countries": countries,
+        "room_types": room_types,
+        "amenities": amenities,
+        "facilities": facilities,
+    }
+
+    return render(request, "rooms/search.html", {**form, **choices})
 ```
