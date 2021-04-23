@@ -138,12 +138,29 @@ class User(AbstractUser):
 
 AUTH_USER_MODEL = "users.User"
 
-7.데이터파일 db.sqlite3을 지운다.
-8.데이터 마이그레이션 한다.
+7. 유저의 admin.py 에 어드민 모델을 덮어씌운다
+
+from django.contrib import admin
+from . import models
+
+# Register your models here.
+
+@admin.register(models.User)
+class CustomUserAdmin(admin.ModelAdmin):
+    pass
+# Register your models here.
+
+
+
+8.데이터파일 db.sqlite3을 지운다.
+9.데이터 마이그레이션 한다.
 python manage.py makemigrations
 python manage.py migrate
 
-9. Done!
+10. Done!
+
+
+++ 추가로 어드민패널관련 메뉴는 admin.py에서 설정가능하며 필드셋등을 사용하여 사용자 친화형 메뉴를 만들수있다.
  ```
 
 ## TimeStampedModel(core) 모델의 활용
@@ -528,4 +545,24 @@ fields = ("first_name", "last_name", "email")와 같이 쓴다.
 
 save메소드에서 password를 오버라이딩 함. set_password
 commit=False의 의미는 오브젝트는 만들지만 아직 데이터베이스에 올리지 말라는뜻.
+```
+
+### 이메일 서비스
+모든이메일 서비스는 mailgun으로 사용하고있다고한다.
+강의 #16.0
+
+### 장고내 환경변수 설정 및 업로드하고 싶지 않은 키의 저장.
+```
+pipenv shell 입력후
+
+pipenv install django-dotenv
+
+로 설치한다.
+
+manage.py 에
+
+import dotenv
+
+dotenv.read_dotenv()
+를 추가한다.
 ```
