@@ -383,6 +383,7 @@ pipenv install django-seed
 python manage.py seed_amenities
 python manage.py seed_facilities
 python manage.py seed_users --number 50
+python manage.py createsuperuser
 룸추가하기전에 룸 타입 추가 
 Hotel room
 Share room
