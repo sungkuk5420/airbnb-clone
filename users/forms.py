@@ -29,7 +29,7 @@ class SignUpForm(forms.ModelForm):
         widgets = {
             "first_name": forms.TextInput(attrs={"placeholder": "First Name"}),
             "last_name": forms.TextInput(attrs={"placeholder": "Last Name"}),
-            "email": forms.EmailInput(attrs={"placeholder": "Email Name"}),
+            "email": forms.EmailInput(attrs={"placeholder": "Email Address"}),
         }
 
     password = forms.CharField(

@@ -1,0 +1,17 @@
+
+#id_gender{
+    min-height: 70px;  
+}
+#id_language,
+#id_currency{
+  min-height: 70px;
+}
+
+#searchFrom{
+    padding: 20px;
+}
+#searchFrom input[type=text],
+#searchFrom select,
+#createRoomForm select{
+    min-height: 70px;
+}

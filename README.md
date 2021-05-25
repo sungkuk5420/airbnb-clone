@@ -21,7 +21,7 @@
 pip install --user pipenv
 ```
 
-### pip error cmd를 절대로 관리자모드로 실행할것
+### pip error 날것임 -> cmd를 절대로 관리자모드로 실행할것
 ```
 pip install --user pipenv
 설치가 끝난후에 제대로 설치가 되어있는지 확인을 하려면
@@ -566,4 +566,9 @@ import dotenv
 
 dotenv.read_dotenv()
 를 추가한다.
+```
+
+### AWS 파이썬 베포 
+```
+pipenv install awsebcli --dev
 ```

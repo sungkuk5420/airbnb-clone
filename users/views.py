@@ -220,7 +220,7 @@ class UpdateProfileView(mixins.LoggedInOnlyView, SuccessMessageMixin, UpdateView
         "last_name",
         "gender",
         "bio",
-        "birthdate",
+        # "birthdate",
         "language",
         "currency",
     )
@@ -234,7 +234,7 @@ class UpdateProfileView(mixins.LoggedInOnlyView, SuccessMessageMixin, UpdateView
         form.fields["first_name"].widget.attrs = {"placeholder": "First name"}
         form.fields["last_name"].widget.attrs = {"placeholder": "Last name"}
         form.fields["bio"].widget.attrs = {"placeholder": "Bio"}
-        form.fields["birthdate"].widget.attrs = {"placeholder": "Birthdate"}
+        # form.fields["birthdate"].widget.attrs = {"placeholder": "Birthdate"}
         form.fields["first_name"].widget.attrs = {"placeholder": "First name"}
         return form
 
