@@ -13,6 +13,8 @@ class CreateError(Exception):
 
 
 def create(request, room, year, month, day):
+    if request.user.is_anonymous:
+        return redirect(reverse("users:login"))
     try:
         date_obj = datetime.datetime(year, month, day)
         room = room_models.Room.objects.get(pk=room)

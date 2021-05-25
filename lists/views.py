@@ -5,6 +5,8 @@ from . import models
 
 
 def toggle_room(request, room_pk):
+    if request.user.is_anonymous:
+        return redirect(reverse("users:login"))
     action = request.GET.get("action", None)
     room = room_models.Room.objects.get_or_none(pk=room_pk)
     if room is not None and action is not None:
