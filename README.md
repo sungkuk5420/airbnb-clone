@@ -572,3 +572,8 @@ dotenv.read_dotenv()
 ```
 pipenv install awsebcli --dev
 ```
+
+ pip freeze > requirements.txt
+
+영상은 이쪽보고 참고
+https://www.youtube.com/watch?v=Uc_Xm5SyMh0

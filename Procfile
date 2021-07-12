@@ -1,1 +1,1 @@
-web: gunicorn airbnb-clone-coding.wsgi 
+web: gunicorn airbnb-clone-coding.wsgi --log-file -
