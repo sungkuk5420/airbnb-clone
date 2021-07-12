@@ -1,1 +1,1 @@
-gunicorn -w 2 -b 0.0.0.0:8000 --chdir /config config.wsgi --log-file -
+web: gunicorn config.wsgi --log-file -
