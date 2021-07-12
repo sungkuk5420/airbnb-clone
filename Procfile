@@ -1,1 +1,1 @@
-web: python manage.py runserver 0.0.0.0:8000 airbnb-clone-coding.wsgi --log-file -
+web: gunicorn -b :8000 airbnb-clone-coding.wsgi --log-file -
