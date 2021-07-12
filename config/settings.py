@@ -26,7 +26,7 @@ SECRET_KEY = "(aii%@6n0=7!e$p5+9qxdku7v-0fj@h5177tc!@pzy_(-q$9zg"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["airbnb-clone-coding.herokuapp.com"]
+ALLOWED_HOSTS = ["https://airbnb-clone-coding.herokuapp.com/","127.0.0.1"]
 
 
 # Application definition
