@@ -1,3 +1,4 @@
+import django_heroku
 """
 Django settings for config project.
 
@@ -153,3 +154,6 @@ LOGIN_URL = "/users/login/"
 # Locale
 
 LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
