@@ -7,7 +7,6 @@
     "url": "git+https://github.com/nomadcoders/airbnb-clone.git"
   },
   "scripts": {
-    "start":"python manage.py runserver 0.0.0.0:8000",
     "css": "gulp"
   },
   "homepage": "https://github.com/nomadcoders/airbnb-clone#readme",
