@@ -18,6 +18,7 @@ requests = "*"
 gunicorn = "*"
 django-heroku = "*"
 cirrus = "*"
+python-dotenv = "==0.10.1"
 
 [requires]
 python_version = "3.7.11"
