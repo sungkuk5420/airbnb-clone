@@ -569,6 +569,19 @@ dotenv.read_dotenv()
 ```
 
 ### AWS 파이썬 베포 
+
+https://devcenter.heroku.com/articles/django-app-configuration
+
 ```
+
+procfile 에 
+web: gunicorn config.wsgi --log-file - 
+추가
+
+
 pipenv install awsebcli --dev
+heroku stack -a airbnb-clone-coding // 스택확인
+heroku stack:set heroku-18 -a airbnb-clone-coding // 스택설정
+pip freeze > requirements.txt //필요한 모듈 추출
+heroku logs --tail --app airbnb-clone-coding  //로그보기
 ```

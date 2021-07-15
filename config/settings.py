@@ -1,3 +1,5 @@
+import django_heroku
+# import dj_database_url 
 """
 Django settings for config project.
 
@@ -24,7 +26,7 @@ SECRET_KEY = "(aii%@6n0=7!e$p5+9qxdku7v-0fj@h5177tc!@pzy_(-q$9zg"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://airbnb-clone-coding.herokuapp.com/","127.0.0.1"]
 
 
 # Application definition
@@ -41,6 +43,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = ["django_countries", "django_seed"]
 
 PROJECT_APPS = [
+    'cirrhus',
     "core.apps.CoreConfig",
     "users.apps.UsersConfig",
     "rooms.apps.RoomsConfig",
@@ -86,11 +89,16 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dcqr887kdnsgo1',
+        'USER': 'anomrvjnjijqzy',
+        'PASSWORD': '7ba5653b516377afa7099edbeb52d610176f3a7939ee917b498114c19a40da23',
+        'HOST': 'ec2-54-227-246-76.compute-1.amazonaws.com',
+        'PORT': '5432',
+        # "ENGINE": "django.db.backends.sqlite3",
+        # "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 
@@ -150,6 +158,9 @@ EMAIL_FROM = "sexy-guy@sandbox2ba559537f904296851b8b1b0c8d7d24.mailgun.org"
 LOGIN_URL = "/users/login/"
 
 
-# Locale
+# # Locale
 
-LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
+# LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
