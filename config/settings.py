@@ -1,4 +1,3 @@
-import django_heroku
 # import dj_database_url 
 """
 Django settings for config project.
@@ -13,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "(aii%@6n0=7!e$p5+9qxdku7v-0fj@h5177tc!@pzy_(-q$9zg"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["https://airbnb-clone-coding.herokuapp.com/","127.0.0.1"]
 
@@ -169,5 +169,5 @@ except ImportError:
     pass
 
 if not DEBUG:
-    import django_heroku
     django_heroku.settings(locals())
+    
