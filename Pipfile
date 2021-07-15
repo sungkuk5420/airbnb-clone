@@ -19,3 +19,4 @@ gunicorn = "*"
 django-heroku = "*"
 whitenoise = "*"
 
+python_version = "3.7.3"
