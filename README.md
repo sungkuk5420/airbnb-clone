@@ -568,11 +568,16 @@ dotenv.read_dotenv()
 를 추가한다.
 ```
 
-### AWS 파이썬 베포 
+### heroku 파이썬 베포 
 
 https://devcenter.heroku.com/articles/django-app-configuration
 
 ```
+heroku git:remote -a airbnb-clone-coding-2 //헤로꾸 앱 연결
+heroku config:set DISABLE_COLLECTSTATIC=1 //헤로꾸앱 활성화
+heroku logs --tail --app airbnb-clone-coding-2 //로그보기
+
+
 
 procfile 에 
 web: gunicorn -b 0.0.0.0:$PORT config.wsgi --log-file -
