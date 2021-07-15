@@ -14,14 +14,10 @@ https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 
 # application = get_wsgi_application()
-
 import os
-
-import dotenv
 from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
 
-dotenv.read_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bootcamp.settings")
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
-
-application = get_wsgi_application()
+application = DjangoWhiteNoise(get_wsgi_application())

@@ -26,7 +26,7 @@ SECRET_KEY = "(aii%@6n0=7!e$p5+9qxdku7v-0fj@h5177tc!@pzy_(-q$9zg"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://airbnb-clone-coding.herokuapp.com/","127.0.0.1"]
+ALLOWED_HOSTS = ["https://airbnb-clone-coding.herokuapp.com/","127.0.0.1","localhost"]
 
 
 # Application definition
@@ -55,10 +55,10 @@ PROJECT_APPS = [
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 # heroku때문에 추가한 미들웨어
-#'whitenoise.storage.CompressedManifestStaticFilesStorage',
+#'whitenoise.middleware.WhiteNoiseMiddleware',
 MIDDLEWARE = [
-    'whitenoise.storage.CompressedManifestStaticFilesStorage',
-    "django.middleware.security.SecurityMiddleware",
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -85,8 +85,6 @@ TEMPLATES = [
         },
     }
 ]
-
-WSGI_APPLICATION = "config.wsgi.application"
 
 
 # Database
@@ -158,7 +156,7 @@ EMAIL_FROM = "sexy-guy@sandbox2ba559537f904296851b8b1b0c8d7d24.mailgun.org"
 # Auth
 
 LOGIN_URL = "/users/login/"
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Locale
 

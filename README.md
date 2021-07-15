@@ -570,6 +570,8 @@ dotenv.read_dotenv()
 
 ### heroku 파이썬 베포 
 
+헤로꾸 pipenv install whitenoise 설치해야한다.
+
 https://devcenter.heroku.com/articles/django-app-configuration
 
 ```
@@ -584,16 +586,14 @@ web: gunicorn -b 0.0.0.0:$PORT config.wsgi --log-file -
 
 추가
 
-xxxxxxxxxxxxxxx이거 무시 쉘진입 ㄴㄴ
 pipenv shell 진입후 설치해야함
-xxxxxxxxxxxxxxx이거 무시 쉘진입 ㄴㄴ
 
-pip install gunicorn 
+pipenv install gunicorn 
 설치
 
-pip install django-heroku
+pipenv install django-heroku
 설치
-pip install awsebcli --dev
+pipenv install awsebcli --dev
 heroku stack -a airbnb-clone-coding // 스택확인
 heroku stack:set heroku-18 -a airbnb-clone-coding // 스택설정
 pip freeze > requirements.txt //필요한 모듈 추출
