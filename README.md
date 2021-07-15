@@ -575,10 +575,15 @@ https://devcenter.heroku.com/articles/django-app-configuration
 ```
 
 procfile 에 
-web: gunicorn config.wsgi --log-file - 
+web: gunicorn -b 0.0.0.0:$PORT config.wsgi --log-file -
+
 추가
 
+pip install gunicorn 
+설치
 
+pip install django-heroku
+설치
 pipenv install awsebcli --dev
 heroku stack -a airbnb-clone-coding // 스택확인
 heroku stack:set heroku-18 -a airbnb-clone-coding // 스택설정

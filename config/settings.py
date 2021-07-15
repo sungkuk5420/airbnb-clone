@@ -43,7 +43,6 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = ["django_countries", "django_seed"]
 
 PROJECT_APPS = [
-    'cirrhus',
     "core.apps.CoreConfig",
     "users.apps.UsersConfig",
     "rooms.apps.RoomsConfig",
