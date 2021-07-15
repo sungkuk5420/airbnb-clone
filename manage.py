@@ -4,11 +4,11 @@ import os
 import sys
 
 import dotenv
-from django.core.wsgi import get_wsgi_application
 
+if __name__ == "__main__":
+    dotenv.read_dotenv()
 
-def main():
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -18,9 +18,3 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
-
-
-if __name__ == "__main__":
-    dotenv.read_dotenv(override=True)
-    main()
-
