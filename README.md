@@ -604,4 +604,7 @@ heroku ps:scale web=1
 
 https://github.com/jpadilla/django-dotenv
 //dotenv관련에러나면 볼것
+
+헤로꾸에서 pipenv 안되면 이걸로 실행
+heroku run pipenv run python manage.py migrate
 ```
