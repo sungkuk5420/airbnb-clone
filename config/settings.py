@@ -163,4 +163,11 @@ LOGIN_URL = "/users/login/"
 # Locale
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
