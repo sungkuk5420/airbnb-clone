@@ -594,4 +594,7 @@ heroku logs --tail --app airbnb-clone-coding  //로그보기
 
 heroku ps:scale web=1
 업로드후 실행
+
+https://github.com/jpadilla/django-dotenv
+//dotenv관련에러나면 볼것
 ```
