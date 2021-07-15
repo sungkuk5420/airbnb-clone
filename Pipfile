@@ -15,9 +15,6 @@ django-countries = "*"
 django-seed = "*"
 django-dotenv = "*"
 requests = "*"
-django-heroku = "*"
-gunicorn = "*"
-cirrus = "*"
 
 [requires]
 python_version = "3.7"

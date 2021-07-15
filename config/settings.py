@@ -1,5 +1,3 @@
-import django_heroku
-import dj_database_url 
 """
 Django settings for config project.
 
@@ -26,7 +24,7 @@ SECRET_KEY = "(aii%@6n0=7!e$p5+9qxdku7v-0fj@h5177tc!@pzy_(-q$9zg"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://airbnb-clone-coding.herokuapp.com/","127.0.0.1"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -43,7 +41,6 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = ["django_countries", "django_seed"]
 
 PROJECT_APPS = [
-    'cirrhus',
     "core.apps.CoreConfig",
     "users.apps.UsersConfig",
     "rooms.apps.RoomsConfig",
@@ -156,6 +153,3 @@ LOGIN_URL = "/users/login/"
 # Locale
 
 LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
-
-# Activate Django-Heroku.
-django_heroku.settings(locals())
