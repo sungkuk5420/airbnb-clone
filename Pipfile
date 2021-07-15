@@ -16,6 +16,7 @@ django-seed = "*"
 django-dotenv = "*"
 requests = "*"
 gunicorn = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7.11"

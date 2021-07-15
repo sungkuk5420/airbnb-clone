@@ -579,14 +579,19 @@ web: gunicorn -b 0.0.0.0:$PORT config.wsgi --log-file -
 
 추가
 
-pip install gunicorn 
+pipenv shell 진입후 설치해야함
+
+pipenv install gunicorn 
 설치
 
-pip install django-heroku
+pipenv install django-heroku
 설치
 pipenv install awsebcli --dev
 heroku stack -a airbnb-clone-coding // 스택확인
 heroku stack:set heroku-18 -a airbnb-clone-coding // 스택설정
 pip freeze > requirements.txt //필요한 모듈 추출
 heroku logs --tail --app airbnb-clone-coding  //로그보기
+
+heroku ps:scale web=1
+업로드후 실행
 ```
