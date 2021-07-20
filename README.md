@@ -568,43 +568,7 @@ dotenv.read_dotenv()
 를 추가한다.
 ```
 
-### heroku 파이썬 베포 
-
-헤로꾸 pipenv install whitenoise 설치해야한다.
-
-https://devcenter.heroku.com/articles/django-app-configuration
-
+### AWS 파이썬 베포 
 ```
-heroku git:remote -a airbnb-clone-coding-2 //헤로꾸 앱 연결
-heroku config:set DISABLE_COLLECTSTATIC=1 //헤로꾸앱 활성화
-heroku logs --tail --app airbnb-clone-coding-2 //로그보기
-
-
-
-procfile 에 
-web: gunicorn -b 0.0.0.0:$PORT config.wsgi --log-file -
-
-추가
-
-pipenv shell 진입후 설치해야함
-
-pipenv install gunicorn 
-설치
-
-pipenv install django-heroku
-설치
 pipenv install awsebcli --dev
-heroku stack -a airbnb-clone-coding // 스택확인
-heroku stack:set heroku-18 -a airbnb-clone-coding // 스택설정
-pip freeze > requirements.txt //필요한 모듈 추출
-heroku logs --tail --app airbnb-clone-coding  //로그보기
-
-heroku ps:scale web=1
-업로드후 실행
-
-https://github.com/jpadilla/django-dotenv
-//dotenv관련에러나면 볼것
-
-헤로꾸에서 pipenv 안되면 이걸로 실행
-heroku run pipenv run python manage.py migrate
 ```

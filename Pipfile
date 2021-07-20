@@ -15,12 +15,9 @@ django-countries = "*"
 django-seed = "*"
 django-dotenv = "*"
 requests = "*"
-gunicorn = "*"
-django-heroku = "*"
-whitenoise = "*"
 
 [requires]
-python_version = "3.7.3"
+python_version = "3.7"
 
 [pipenv]
 allow_prereleases = true

@@ -1,5 +1,3 @@
-import django_heroku
-# import dj_database_url 
 """
 Django settings for config project.
 
@@ -26,7 +24,7 @@ SECRET_KEY = "(aii%@6n0=7!e$p5+9qxdku7v-0fj@h5177tc!@pzy_(-q$9zg"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://airbnb-clone-coding.herokuapp.com/","127.0.0.1","localhost"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -54,11 +52,8 @@ PROJECT_APPS = [
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
-# heroku때문에 추가한 미들웨어
-#'whitenoise.middleware.WhiteNoiseMiddleware',
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -86,17 +81,14 @@ TEMPLATES = [
     }
 ]
 
+WSGI_APPLICATION = "config.wsgi.application"
+
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
 DATABASES = {
     "default": {
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'dcqr887kdnsgo1',
-        # 'USER': 'anomrvjnjijqzy',
-        # 'PASSWORD': '7ba5653b516377afa7099edbeb52d610176f3a7939ee917b498114c19a40da23',
-        # 'HOST': 'ec2-54-227-246-76.compute-1.amazonaws.com',
-        # 'PORT': '5432'
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
@@ -156,16 +148,8 @@ EMAIL_FROM = "sexy-guy@sandbox2ba559537f904296851b8b1b0c8d7d24.mailgun.org"
 # Auth
 
 LOGIN_URL = "/users/login/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Locale
 
-# Activate Django-Heroku.
-try:
-    from .local_settings import *
-except ImportError:
-    pass
-
-if not DEBUG:
-    import django_heroku
-    django_heroku.settings(locals())
+LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
