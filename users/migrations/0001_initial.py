@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
                 ('date_joined', models.DateTimeField(default=django.utils.timezone.now, verbose_name='date joined')),
                 ('avatar', models.ImageField(blank=True, upload_to='avatars')),
                 ('gender', models.CharField(blank=True, choices=[('male', 'Male'), ('female', 'Female'), ('other', 'Other')], max_length=10, verbose_name='gender')),
-                ('bio', models.TextField(blank=True, verbose_name='bio')),
+                # ('bio', models.TextField(blank=True, verbose_name='bio')),
                 # ('birthdate', models.DateField(blank=True, null=True)),
                 ('language', models.CharField(blank=True, choices=[('en', 'English'), ('kr', 'Korean')], default='kr', max_length=2, verbose_name='language')),
                 ('currency', models.CharField(blank=True, choices=[('usd', 'USD'), ('krw', 'KRW')], default='krw', max_length=3)),

@@ -15,7 +15,7 @@ class CustomUserAdmin(UserAdmin):
                 "fields": (
                     "avatar",
                     "gender",
-                    "bio",
+                    # "bio",
                     # "birthdate",
                     "language",
                     "currency",

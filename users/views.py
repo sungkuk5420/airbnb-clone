@@ -111,7 +111,7 @@ def github_callback(request):
                 if username is not None:
                     name = profile_json.get("name")
                     email = profile_json.get("email")
-                    bio = profile_json.get("bio")
+                    # bio = profile_json.get("bio")
                     try:
                         user = models.User.objects.get(email=email)
                         if user.login_method != models.User.LOGIN_GITHUB:
@@ -123,7 +123,7 @@ def github_callback(request):
                             email=email,
                             first_name=name,
                             username=email,
-                            bio=bio,
+                            # bio=bio,
                             login_method=models.User.LOGIN_GITHUB,
                             email_verified=True,
                         )
@@ -219,7 +219,7 @@ class UpdateProfileView(mixins.LoggedInOnlyView, SuccessMessageMixin, UpdateView
         "first_name",
         "last_name",
         "gender",
-        "bio",
+        # "bio",
         # "birthdate",
         "language",
         "currency",
@@ -233,7 +233,7 @@ class UpdateProfileView(mixins.LoggedInOnlyView, SuccessMessageMixin, UpdateView
         form = super().get_form(form_class=form_class)
         form.fields["first_name"].widget.attrs = {"placeholder": "First name"}
         form.fields["last_name"].widget.attrs = {"placeholder": "Last name"}
-        form.fields["bio"].widget.attrs = {"placeholder": "Bio"}
+        # form.fields["bio"].widget.attrs = {"placeholder": "Bio"}
         # form.fields["birthdate"].widget.attrs = {"placeholder": "Birthdate"}
         form.fields["first_name"].widget.attrs = {"placeholder": "First name"}
         return form
