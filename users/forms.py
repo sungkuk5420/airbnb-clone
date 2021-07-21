@@ -42,7 +42,7 @@ class SignUpForm(forms.ModelForm):
     def clean_email(self):
         email = self.cleaned_data.get("email")
         try:
-            models.User.objects.get(email=email)
+            models.User.objects.filter(email=email)
             raise forms.ValidationError(
                 "That email is already taken", code="existing_user"
             )
