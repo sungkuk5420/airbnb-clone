@@ -41,12 +41,10 @@ class SignUpForm(forms.ModelForm):
 
     def clean_email(self):
         email = self.cleaned_data.get("email")
-        try:
-            models.User.objects.filter(email=email)
-            raise forms.ValidationError(
-                "That email is already taken", code="existing_user"
-            )
-        except models.User.DoesNotExist:
+        users = models.User.objects.filter(email=email)
+        if len(users) is not 0:
+            raise forms.ValidationError("That email is already taken", code="existing_user")
+        else:
             return email
 
     def clean_password1(self):
