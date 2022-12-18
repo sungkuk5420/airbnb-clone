@@ -98,6 +98,25 @@ rooms모델에 가서 해당 related_name을 설정하자
     워드가 있으면 필터링해주고 없으면 전체 리뷰를 반환하도록 한다.
 ```
 
+## rest api 시작
+```
+poetry shell 
+poetry add djangorestframework
+
+그다음
+settings.py에서 
+
+THIRD_PARTY_APPS = [
+    "rest_framework",
+]
+를 추가한뒤에 
+
+INSTALLED_APPS = SYSTEM_APPS + THIRD_PARTY_APPS + CUSTOM_APPS
+로 변경한다.
+
+
+```
+
 ## 커스텀한 유저 모델을 사용하도록 함
 ```
 config의 settings.py파일의 제일아래에 한줄 추가한다
