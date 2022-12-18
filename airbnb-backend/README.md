@@ -83,6 +83,21 @@ rooms모델에 가서 해당 related_name을 설정하자
 
 ```
 
+## 8강 커스텀 검색필드 및 필터링
+```
+    search_fields = (
+        "name",
+        "^price", =>startwith
+        "=owner__username", 완전일치
+    )
+
+    커스텀 필터링을 할때엔 review의 admin.py를 참고하자
+    워드로 필터링하는데 여기서는 lookups랑 queryset을 설정해야한다
+    lookups는 필터링할 리스트를 말하고 queryset은 실제로 실행될 필터링 함수이다.
+
+    워드가 있으면 필터링해주고 없으면 전체 리뷰를 반환하도록 한다.
+```
+
 ## 커스텀한 유저 모델을 사용하도록 함
 ```
 config의 settings.py파일의 제일아래에 한줄 추가한다
