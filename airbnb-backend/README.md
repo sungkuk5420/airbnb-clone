@@ -114,6 +114,11 @@ THIRD_PARTY_APPS = [
 INSTALLED_APPS = SYSTEM_APPS + THIRD_PARTY_APPS + CUSTOM_APPS
 로 변경한다.
 
+views.py파일에서
+각 api를 정의하게 되는데 
+이때 @api_view라고 적으면 자동으로 api형태로 변경해준다.
+GET이외에 POST도 허용해주려면 @api_view(["GET", "POST"]) 로 작성하면된다.
+
 
 ```
 
