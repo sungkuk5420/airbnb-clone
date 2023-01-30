@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Room, Amenity
 
+
 @admin.action(description="Set all prices to zero")
 def reset_prices(model_admin, request, rooms):
     for room in rooms.all():
@@ -12,6 +13,7 @@ def reset_prices(model_admin, request, rooms):
 class RoomAdmin(admin.ModelAdmin):
 
     actions = (reset_prices,)
+
     list_display = (
         "name",
         "price",
@@ -31,21 +33,16 @@ class RoomAdmin(admin.ModelAdmin):
         "created_at",
         "updated_at",
     )
-
     search_fields = (
         "name",
         "^price",
         "=owner__username",
     )
 
-    def total_amenities(self,room):
-        print(room)
-        return room.amenities.count()
-
 
 @admin.register(Amenity)
 class AmenityAdmin(admin.ModelAdmin):
-    
+
     list_display = (
         "name",
         "description",

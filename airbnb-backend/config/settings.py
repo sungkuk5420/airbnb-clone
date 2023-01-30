@@ -27,13 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
+# Application definition
 THIRD_PARTY_APPS = [
     "rest_framework",
 ]
 
-# Application definition
-
-CUSTOM_APPS = [ 
+CUSTOM_APPS = [
     "common.apps.CommonConfig",
     "users.apps.UsersConfig",
     "rooms.apps.RoomsConfig",
@@ -43,8 +43,8 @@ CUSTOM_APPS = [
     "wishlists.apps.WishlistsConfig",
     "bookings.apps.BookingsConfig",
     "medias.apps.MediasConfig",
-    "direct_messages.apps.DirectMessagesConfig"
-    ]
+    "direct_messages.apps.DirectMessagesConfig",
+]
 
 SYSTEM_APPS = [
     "django.contrib.admin",
@@ -140,6 +140,13 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-#Auth
+
+# Auth
 
 AUTH_USER_MODEL = "users.User"
+
+MEDIA_ROOT = "uploads"
+
+MEDIA_URL = "user-uploads/"
+
+PAGE_SIZE = 3

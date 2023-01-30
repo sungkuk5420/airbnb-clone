@@ -22,6 +22,7 @@ class WordFilter(admin.SimpleListFilter):
         else:
             reviews
 
+
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
 
