@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework.exceptions import NotFound, PermissionDenied
 from .models import Photo
 
+
 class PhotoDetail(APIView):
 
     permission_classes = [IsAuthenticated]
