@@ -1,8 +1,49 @@
 # airbnb clone
 
 
-## 다시들어야할것같은강의
+## 프로젝트 시작
+
+### poetry
 ```
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+
+microsoft 스토어를 통해 다운로드 한경우에는 
+
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+
+나는 이미 다른 프로젝트로 설치 하였으니 아래의 메소드를 통해 프로젝트 init을 한다.
+
+poetry init
+
+no
+no
+
+```
+
+### 장고 설치
+```
+poetry add django
+
+poetry shell로 쉘 진입후 장고 명령어 입력
+
+django-admin startproject <프로젝트명> .
+
+나의 경우엔 config로 지정하여
+
+django-admin startproject config . 를 실행하면 장고 프로젝트가 만들어진다.
+```
+
+### gitignore 라는 확장 프로그램 설치후 ctrl + p로 add gitignore입력, 파이썬을 지정한다
+
+### 개발시작,
+```
+python manage.py runserver
+
+python manage.py createsuperuser 
+
+python manage.py makemigrations
+
+python manage.py migrate
 
 ```
 
@@ -17,6 +58,7 @@
  이후 장고를 설치
 
  poetry add django
+ poetry install
 
  이후 가상환경 안으로 접속해야하는데 명령어는 
  poetry shell
